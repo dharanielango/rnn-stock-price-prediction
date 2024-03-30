@@ -27,9 +27,6 @@ Fit the model. Evaluate the model.
 #### Register Number:  212221230021
 ```
 
-### Name: Dharani Elango
-### Register Number:212221230021
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
