@@ -27,6 +27,10 @@ Fit the model. Evaluate the model.
 #### Register Number:  212221230021
 ```
 
+
+### Name: Dharani Elango
+### Register Number:212221230021
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -91,8 +95,10 @@ inputs = dataset_total.values
 inputs = inputs.reshape(-1,1)
 inputs_scaled=sc.transform(inputs)
 X_test = []
+y_test=[]
 for i in range(60,1384):
   X_test.append(inputs_scaled[i-60:i,0])
+  y_test.append(inputs_scaled[i,0])
 X_test = np.array(X_test)
 X_test = np.reshape(X_test,(X_test.shape[0], X_test.shape[1],1))
 
@@ -109,6 +115,11 @@ plt.xlabel('Time')
 plt.ylabel('Google Stock Price')
 plt.legend()
 plt.show()
+
+from sklearn.metrics import mean_squared_error as mse
+mse=mse(y_test,predicted_stock_price)
+print("Mean Square Error : ",mse)
+
 
 ```
 
